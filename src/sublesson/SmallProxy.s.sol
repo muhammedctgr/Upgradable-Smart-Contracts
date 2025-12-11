@@ -54,3 +54,5 @@ contract ImplementationB {
 
 // UUPS -> Where all upgrade logic is in the implementation contract, and
 // you can't have 2 functions with the same function selector.
+// Anyone can call functions on the implementation contract,
+// but only admins can upgrade.
