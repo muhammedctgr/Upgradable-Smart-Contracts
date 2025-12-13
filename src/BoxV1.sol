@@ -5,6 +5,8 @@ import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/Own
 import {Initializable} from "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
+// storage is stored in the proxy contract, not in the implementation contract.
+
 contract BoxV1 is Initializable, OwnableUpgradeable, UUPSUpgradeable {
     uint256 internal value;
 
@@ -15,7 +17,7 @@ contract BoxV1 is Initializable, OwnableUpgradeable, UUPSUpgradeable {
 
     function initialize() public initializer {
         __Ownable_init();
-        __UUPSUpgradeable_init();
+      //  __UUPSUpgradeable_init();
     }
 
     function getValue() public view returns (uint256) {
